@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="screen.css">
+<script>
+  //the function startup of the game, sets everything up
+  let buttonclick = 0;
+function startgame() {
+  document.getElementById("demo").innerHTML = text1;
+  document.getElementById("cashtxt").innerHTML = 1000;
+  document.getElementById("clicks").innerHTML = buttonclick + 1;
+
+  button1.innerHTML=text2
+  event1();
+ 
+}
+
+
+
+//events that runs
+function event1(){
+  if (buttonclick> 1){
+    button1.innerHTML=text3
+  }
+}
+
+// random event generator tbd
+
+
+
+//the display texts stored here
+  let text1 = "You are the newly elected mayor of Etherville, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!" ;
+  let text2 = "Okay"
+  let text3 = "Rough"
+
+</script>
+
+
+</head>
+<body>
+<!--This is the main text area that is modified the displays-->
+<h2>Climate Simulator</h2>
+
+<div class="row">  
+  <div id="middle"class="column middle">
+    <p id="demo">Welcome to climate simulator currently in demo</p>
+  </div>
+
+  <!--resources display-->
+  <div id="side"class="column side">
+    <p>Cash amount:</p>
+    <p id="cashtxt">Cash</p>
+    <p>Click amount</p>
+    <p id="clicks">Click</p>
+  </div>
+</div>
+
+
+<!--the button that start the game-->
+<button type="button" id="button1" onclick="startgame()">Start Game</button>
+
+</body>
+</html> 
