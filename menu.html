@@ -3,14 +3,20 @@
 <head>
   <link rel="stylesheet" href="screen.css">
 <script>
-  //the function startup of the game, sets everything up
-  let buttonclick = 0;
-function startgame() {
-  document.getElementById("demo").innerHTML = text1;
-  document.getElementById("cashtxt").innerHTML = 1000;
-  document.getElementById("clicks").innerHTML = buttonclick + 1;
+  //variables
+let ButtonClick = 0;
+let Cash=1000;
+let Population = 300;
+let Environment = 100;
+let Happy = 100;
+let Poverty = 10;
 
-  button1.innerHTML=text2
+//the function startup of the game, sets everything up
+function startgame() {
+  ButtonClick = ButtonClick + 1;
+  document.getElementById("text").innerHTML = "You are the newly elected mayor of Etherville, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!";
+  document.getElementById("Cashtxt").innerHTML = Cash;
+  document.getElementById("clicks").innerHTML = ButtonClick;
   event1();
  
 }
@@ -19,19 +25,16 @@ function startgame() {
 
 //events that runs
 function event1(){
-  if (buttonclick> 1){
-    button1.innerHTML=text3
-  }
+  if (ButtonClick > 1){
+    document.getElementById("text").innerHTML = "Your first task is should the government enact a law limiting gas car purchases?";
 }
+}
+
+//yes or no difference teller
+
 
 // random event generator tbd
 
-
-
-//the display texts stored here
-  let text1 = "You are the newly elected mayor of Etherville, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!" ;
-  let text2 = "Okay"
-  let text3 = "Rough"
 
 </script>
 
@@ -43,21 +46,29 @@ function event1(){
 
 <div class="row">  
   <div id="middle"class="column middle">
-    <p id="demo">Welcome to climate simulator currently in demo</p>
+    <p id="text">Welcome to climate simulator currently in text</p>
   </div>
 
   <!--resources display-->
   <div id="side"class="column side">
     <p>Cash amount:</p>
-    <p id="cashtxt">Cash</p>
+    <p id="Cashtxt">Cash</p>
     <p>Click amount</p>
     <p id="clicks">Click</p>
+    <p>Population:</p>
+    <p id="poptxt">Population</p>
+    <p>Environment</p>
+    <p id="envtxt">Environment</p>
+    <p>Happiness Level:</p>
+    <p id="hpptxt">Happy</p>
+    <p>Poverty:</p>
+    <p id="ppptxt">Poverty</p>
   </div>
 </div>
 
 
 <!--the button that start the game-->
-<button type="button" id="button1" onclick="startgame()">Start Game</button>
-
+<button type="button" id="button1" onclick="startgame()">Yes</button>
+<button type="button" id="button2" onclick="startgame()">No</button>
 </body>
 </html> 
