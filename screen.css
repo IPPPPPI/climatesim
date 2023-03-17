@@ -10,6 +10,14 @@
     width: 50%;
 }
 
+#button2{
+  visibility:hidden;
+}
+
+#button3{
+  visibility:hidden;
+}
+
 /* Create three unequal columns that floats next to each other */
 .column {
     float: left;

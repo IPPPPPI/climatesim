@@ -14,9 +14,16 @@ let Poverty = 10;
 //the function startup of the game, sets everything up
 function startgame() {
   ButtonClick = ButtonClick + 1;
-  document.getElementById("text").innerHTML = "You are the newly elected mayor of Etherville, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!";
+  document.getElementById("text").innerHTML = "You are the newly elected mayor of Oaktown, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!";
   document.getElementById("Cashtxt").innerHTML = Cash;
+  document.getElementById("poptxt").innerHTML = Population;
+  document.getElementById("envtxt").innerHTML = Environment;
+  document.getElementById("hpptxt").innerHTML = Happy;
+  document.getElementById("povtxt").innerHTML = Poverty;
   document.getElementById("clicks").innerHTML = ButtonClick;
+  document.getElementById("button1").innerHTML = "Okay";
+  document.getElementById('button2').style.visibility = "hidden"
+  document.getElementById('button3').style.visibility = "hidden"  
   event1();
  
 }
@@ -27,9 +34,14 @@ function startgame() {
 function event1(){
   if (ButtonClick > 1){
     document.getElementById("text").innerHTML = "Your first task is should the government enact a law limiting gas car purchases?";
+    document.getElementById("button1").style.display = 'none';
+    document.getElementById('button2').style.visibility = "visible"
+    document.getElementById('button3').style.visibility = "visible"  
 }
 }
+function event2(){
 
+}
 //yes or no difference teller
 
 
@@ -47,8 +59,14 @@ function event1(){
 <div class="row">  
   <div id="middle"class="column middle">
     <p id="text">Welcome to climate simulator currently in text</p>
+    <!--the button that start the game-->
+<button type="button" id="button1" onclick="startgame()">Start Game</button>
+<button type="button" id="button2" onclick="event2()">Yes</button>
+<button type="button" id="button3" onclick="event3()">No</button>
+
   </div>
 
+  
   <!--resources display-->
   <div id="side"class="column side">
     <p>Cash amount:</p>
@@ -62,13 +80,9 @@ function event1(){
     <p>Happiness Level:</p>
     <p id="hpptxt">Happy</p>
     <p>Poverty:</p>
-    <p id="ppptxt">Poverty</p>
+    <p id="povtxt">Poverty</p>
   </div>
 </div>
 
-
-<!--the button that start the game-->
-<button type="button" id="button1" onclick="startgame()">Yes</button>
-<button type="button" id="button2" onclick="startgame()">No</button>
 </body>
 </html> 
