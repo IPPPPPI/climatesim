@@ -2,70 +2,19 @@
 <html>
 <head>
   <link rel="stylesheet" href="screen.css">
-<script>
-  //variables
-let ButtonClick = 0;
-let Cash=1000;
-let Population = 300;
-let Environment = 100;
-let Happy = 100;
-let Poverty = 10;
-
-//the function startup of the game, sets everything up
-function startgame() {
-  ButtonClick = ButtonClick + 1;
-  document.getElementById("text").innerHTML = "You are the newly elected mayor of Oaktown, a town who is in the middle of a climate disaster. Now you will be making decision for the next four years. Good Luck!";
-  document.getElementById("Cashtxt").innerHTML = Cash;
-  document.getElementById("poptxt").innerHTML = Population;
-  document.getElementById("envtxt").innerHTML = Environment;
-  document.getElementById("hpptxt").innerHTML = Happy;
-  document.getElementById("povtxt").innerHTML = Poverty;
-  document.getElementById("clicks").innerHTML = ButtonClick;
-  document.getElementById("button1").innerHTML = "Okay";
-  event1();
- 
-}
-
-
-
-//events that runs
-function event1(){
-  if (ButtonClick > 1){
-    document.getElementById("text").innerHTML = "Your first task is should the government enact a law limiting gas car purchases?";
-    document.getElementById("button1").style.display = 'none';
-    document.getElementById('button2').style.visibility = "visible"
-    document.getElementById('button3').style.visibility = "visible"  
-  }
-}
-
-function event2(){
-  Cash= Cash-100;
-  Happy=Happy-5;
-  Poverty=Poverty+5;
-  Population=Population-10;
-  Environment=Environment-10;
-}
-
-function event3(){
-  Cash=Cash+100;
-  Happy=Happy+5;
-  Poverty=Poverty-2;
-  Population=Population+10;
-  Environment=Environment+5;
-}
-
-</script>
-
+  <link rel="stylesheet" href="script.js">
 
 </head>
 <body>
-<!--This is the main text area that is modified the displays-->
+<!--Title-->
 <h2>Climate Simulator</h2>
 
+<!--Main text-->
 <div class="row">  
   <div id="middle"class="column middle">
     <p id="text">Welcome to climate simulator currently in text</p>
-    <!--the button that start the game-->
+
+ <!--the button, runs function from script.js-->
 <button type="button" id="button1" onclick="startgame()">Start Game</button>
 <button type="button" id="button2" onclick="event2()">Yes</button>
 <button type="button" id="button3" onclick="event3()">No</button>
@@ -76,15 +25,20 @@ function event3(){
   <!--resources display-->
   <div id="side"class="column side">
     <p>Cash amount:</p>
-    <p id="Cashtxt">Cash</p>
+    <p id="cashtxt">Cash</p>
+
     <p>Click amount</p>
     <p id="clicks">Click</p>
+
     <p>Population:</p>
     <p id="poptxt">Population</p>
+
     <p>Environment</p>
     <p id="envtxt">Environment</p>
+
     <p>Happiness Level:</p>
     <p id="hpptxt">Happy</p>
+
     <p>Poverty:</p>
     <p id="povtxt">Poverty</p>
   </div>
