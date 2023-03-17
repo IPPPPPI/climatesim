@@ -22,8 +22,6 @@ function startgame() {
   document.getElementById("povtxt").innerHTML = Poverty;
   document.getElementById("clicks").innerHTML = ButtonClick;
   document.getElementById("button1").innerHTML = "Okay";
-  document.getElementById('button2').style.visibility = "hidden"
-  document.getElementById('button3').style.visibility = "hidden"  
   event1();
  
 }
@@ -37,16 +35,24 @@ function event1(){
     document.getElementById("button1").style.display = 'none';
     document.getElementById('button2').style.visibility = "visible"
     document.getElementById('button3').style.visibility = "visible"  
+  }
 }
-}
+
 function event2(){
-
+  Cash= Cash-100;
+  Happy=Happy-5;
+  Poverty=Poverty+5;
+  Population=Population-10;
+  Environment=Environment-10;
 }
-//yes or no difference teller
 
-
-// random event generator tbd
-
+function event3(){
+  Cash=Cash+100;
+  Happy=Happy+5;
+  Poverty=Poverty-2;
+  Population=Population+10;
+  Environment=Environment+5;
+}
 
 </script>
 
